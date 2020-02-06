@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 12:50:41 by cclaude           #+#    #+#             */
-/*   Updated: 2019/11/01 16:49:28 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/02/06 18:12:28 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_strlen(char *s)
 	return (i);
 }
 
-int		ft_putstr_prewid(char *s, struct s_flgs flags)
+int		ft_putstr_prewid(char *s, struct s_flgs *flags)
 {
 	int		ssize;
 	int		padsize;
@@ -30,45 +30,45 @@ int		ft_putstr_prewid(char *s, struct s_flgs flags)
 	char	c;
 
 	c = ' ';
-	if (flags.zero == 1 && flags.minus == 0)
+	if (flags->zero == 1 && flags->minus == 0)
 		c = '0';
-	ssize = (ft_strlen(s) < flags.precision) ? ft_strlen(s) : flags.precision;
-	padsize = (flags.width > ssize) ? flags.width - ssize : 0;
+	ssize = (ft_strlen(s) < flags->precision) ? ft_strlen(s) : flags->precision;
+	padsize = (flags->width > ssize) ? flags->width - ssize : 0;
 	i = 0;
-	while (flags.minus == 1 && i < flags.precision && s[i] != '\0')
-		write(1, &s[i++], 1);
+	while (flags->minus == 1 && i < flags->precision && s[i] != '\0')
+		buf_write(flags->buffer, s[i++], &flags->index);
 	i = 0;
 	while (i++ < padsize)
-		write(1, &c, 1);
+		buf_write(flags->buffer, c, &flags->index);
 	i = 0;
-	while (flags.minus == 0 && i < flags.precision && s[i] != '\0')
-		write(1, &s[i++], 1);
-	return (ssize > flags.width ? ssize : flags.width);
+	while (flags->minus == 0 && i < flags->precision && s[i] != '\0')
+		buf_write(flags->buffer, s[i++], &flags->index);
+	return (ssize > flags->width ? ssize : flags->width);
 }
 
-int		ft_putstr_wid(char *s, struct s_flgs flags)
+int		ft_putstr_wid(char *s, struct s_flgs *flags)
 {
 	int		padsize;
 	int		i;
 	char	c;
 
 	c = ' ';
-	if (flags.zero == 1 && flags.minus == 0)
+	if (flags->zero == 1 && flags->minus == 0)
 		c = '0';
-	padsize = (flags.width > ft_strlen(s)) ? flags.width - ft_strlen(s) : 0;
+	padsize = (flags->width > ft_strlen(s)) ? flags->width - ft_strlen(s) : 0;
 	i = 0;
-	while (flags.minus == 1 && s[i] != '\0')
-		write(1, &s[i++], 1);
+	while (flags->minus == 1 && s[i] != '\0')
+		buf_write(flags->buffer, s[i++], &flags->index);
 	i = 0;
 	while (i++ < padsize)
-		write(1, &c, 1);
+		buf_write(flags->buffer, c, &flags->index);
 	i = 0;
-	while (flags.minus == 0 && s[i] != '\0')
-		write(1, &s[i++], 1);
-	return (ft_strlen(s) > flags.width ? ft_strlen(s) : flags.width);
+	while (flags->minus == 0 && s[i] != '\0')
+		buf_write(flags->buffer, s[i++], &flags->index);
+	return (ft_strlen(s) > flags->width ? ft_strlen(s) : flags->width);
 }
 
-int		ft_putstr_pre(char *s, int prec)
+int		ft_putstr_pre(struct s_flgs *flags, char *s, int prec)
 {
 	int	ssize;
 	int	i;
@@ -76,16 +76,16 @@ int		ft_putstr_pre(char *s, int prec)
 	ssize = (ft_strlen(s) < prec) ? ft_strlen(s) : prec;
 	i = 0;
 	while (i < ssize && s[i] != '\0')
-		write(1, &s[i++], 1);
+		buf_write(flags->buffer, s[i++], &flags->index);
 	return (ssize);
 }
 
-int		ft_putstr(char *s)
+int		ft_putstr(struct s_flgs *flags, char *s)
 {
 	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
-		write(1, &s[i++], 1);
+		buf_write(flags->buffer, s[i++], &flags->index);
 	return (i);
 }
