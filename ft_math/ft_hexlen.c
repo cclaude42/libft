@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_hexlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 14:14:19 by cclaude           #+#    #+#             */
-/*   Updated: 2019/10/09 14:34:18 by cclaude          ###   ########.fr       */
+/*   Created: 2020/02/06 11:22:44 by cclaude           #+#    #+#             */
+/*   Updated: 2020/02/06 16:01:15 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libutils.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_hexlen(long n)
 {
-	int	i;
+	int		size;
 
-	i = 0;
-	while (s[i] != c)
+	size = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		size++;
+	while (n != 0)
 	{
-		if (s[i] == '\0')
-			return (NULL);
-		i++;
+		n = n / 16;
+		size++;
 	}
-	return ((char *)s + i);
+	return (size);
 }

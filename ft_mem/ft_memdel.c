@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 14:14:19 by cclaude           #+#    #+#             */
-/*   Updated: 2019/10/09 14:34:18 by cclaude          ###   ########.fr       */
+/*   Created: 2020/02/06 14:47:21 by cclaude           #+#    #+#             */
+/*   Updated: 2020/02/06 15:38:11 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libutils.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memdel(void *ptr)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != c)
+	if (ptr)
 	{
-		if (s[i] == '\0')
-			return (NULL);
-		i++;
+		free(ptr);
+		ptr = NULL;
 	}
-	return ((char *)s + i);
+	return (NULL);
 }

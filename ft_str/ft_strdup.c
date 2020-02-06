@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libutils.h"
+#include "libutils.h"
 
 char	*ft_strdup(const char *s1)
 {

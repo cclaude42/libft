@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libutils.h"
+#include "libutils.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

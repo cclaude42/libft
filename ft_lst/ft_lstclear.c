@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libutils.h"
+#include "libutils.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

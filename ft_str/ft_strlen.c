@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libutils.h"
+#include "libutils.h"
 
 size_t	ft_strlen(const char *s)
 {

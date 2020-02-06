@@ -6,11 +6,11 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:22:49 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/05 18:17:47 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/02/06 15:38:11 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libutils.h"
+#include "libutils.h"
 
 int	ft_isprint(int c)
 {

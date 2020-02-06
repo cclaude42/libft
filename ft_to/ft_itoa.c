@@ -6,11 +6,11 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:45:11 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/06 11:52:23 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/02/06 15:38:11 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libutils.h"
+#include "libutils.h"
 
 char		*ft_itoa(int n)
 {
@@ -20,9 +20,9 @@ char		*ft_itoa(int n)
 	int		i;
 
 	i = 0;
+	nbr = n;
 	if (!(s = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1))))
 		return (NULL);
-	nbr = n;
 	if (nbr < 0)
 	{
 		s[i++] = '-';

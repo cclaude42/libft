@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libutils.h"
+#include "libutils.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
