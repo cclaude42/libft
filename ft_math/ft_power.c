@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_skip_spacenl.c                                  :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 18:26:24 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/05 18:29:40 by cclaude          ###   ########.fr       */
+/*   Created: 2020/02/06 11:33:13 by cclaude           #+#    #+#             */
+/*   Updated: 2020/02/06 11:42:27 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libutils.h"
 
-void	ft_skip_spacenl(char *line, int *i)
+int		ft_power(int nbr, int pow)
 {
-	while ((line[*i] == ' ' || line[*i] == '\t' || line[*i] == '\n')
-	|| (line[*i] == '\r' || line[*i] == '\v' || line[*i] == '\f'))
-		(*i)++;
+	int	res;
+
+	if (pow == 0)
+		return (1);
+	res = nbr;
+	while (pow > 1)
+	{
+		res *= nbr;
+		pow--;
+	}
+	return (res);
 }

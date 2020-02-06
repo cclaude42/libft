@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 HEADER = libutils.h
 
-FTIS = alnum alpha ascii count digit in print space spacenl
+FTIS = alnum alpha ascii count digit in print space spacenl where
 
 FTSKIP = ft_is/ft_skip_space ft_is/ft_skip_spacenl
 
@@ -22,7 +22,7 @@ FTSUB = ft_str/ft_substr ft_str/ft_split
 
 FTTO = tolower toupper atoi itoa
 
-SRC = $(addsuffix .c, $(addprefix ft_is/ft_is, $(FTIS)) $(FTSKIP)) \
+SRC = $(addsuffix .c, $(addprefix ft_is/ft_is, $(FTIS))) \
 	$(addsuffix .c, $(addprefix ft_lst/ft_lst, $(FTLST))) \
 	$(addsuffix .c, $(addprefix ft_mem/ft_, $(FTMEM))) \
 	$(addsuffix .c, $(addprefix ft_put/ft_put, $(FTPUT))) \

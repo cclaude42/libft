@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_skip_spacenl.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 18:45:11 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/06 11:52:23 by cclaude          ###   ########.fr       */
+/*   Created: 2020/02/05 18:26:24 by cclaude           #+#    #+#             */
+/*   Updated: 2020/02/06 12:03:23 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libutils.h"
 
-char		*ft_itoa(int n)
+void	ft_skip_spacenl(const char *str, int *i)
 {
-	long	nbr;
-	char	*s;
-	int		div;
-	int		i;
-
-	i = 0;
-	if (!(s = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1))))
-		return (NULL);
-	nbr = n;
-	if (nbr < 0)
-	{
-		s[i++] = '-';
-		nbr = -nbr;
-	}
-	div = ft_power(10, ft_nbrlen(nbr) - 1);
-	while (div > 0)
-	{
-		s[i++] = nbr / div + '0';
-		nbr = nbr % div;
-		div = div / 10;
-	}
-	s[i] = '\0';
-	return (s);
+	while ((str[*i] == ' ' || str[*i] == '\t' || str[*i] == '\n')
+	|| (str[*i] == '\r' || str[*i] == '\v' || str[*i] == '\f'))
+		(*i)++;
 }

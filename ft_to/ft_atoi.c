@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:44:36 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/05 18:22:02 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/02/06 12:08:30 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	num = 0;
-	while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-	|| (str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
-		i++;
+	ft_skip_spacenl(str, &i);
 	if (str[i] == '-')
 		sign = -1;
 	if (str[i] == '-' || str[i] == '+')

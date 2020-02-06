@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 14:32:51 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/05 19:31:04 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/02/06 12:03:33 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
@@ -31,9 +32,6 @@ int					ft_isin(int c, char *base);
 int					ft_isprint(int c);
 int					ft_isspace(int c);
 int					ft_isspacenl(int c);
-
-int					ft_tolower(int c);
-int					ft_toupper(int c);
 
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
@@ -68,8 +66,18 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 
+void				ft_skip_space(const char *str, int *i);
+void				ft_skip_spacenl(const char *str, int *i);
+void				ft_skip_char(const char *str, int *i, char c);
+void				ft_skip_chars(const char *str, int *i, char *base);
+
+int					ft_tolower(int c);
+int					ft_toupper(int c);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+
+int					ft_nbrlen(long n);
+int					ft_power(int nbr, int pow);
 
 void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstadd_front(t_list **alst, t_list *new);

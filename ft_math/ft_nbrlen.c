@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_skip_space.c                                    :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 18:26:24 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/05 18:29:57 by cclaude          ###   ########.fr       */
+/*   Created: 2020/02/06 11:22:44 by cclaude           #+#    #+#             */
+/*   Updated: 2020/02/06 11:50:04 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libutils.h"
 
-void	ft_skip_space(char *line, int *i)
+int		ft_nbrlen(long n)
 {
-	while ((line[*i] == ' ' || line[*i] == '\t')
-	|| (line[*i] == '\r' || line[*i] == '\v' || line[*i] == '\f'))
-		(*i)++;
+	long	nbr;
+	int		size;
+
+	nbr = n;
+	size = 0;
+	if (nbr == 0)
+		return (1);
+	if (nbr < 0)
+		size++;
+	while (nbr != 0)
+	{
+		nbr = nbr / 10;
+		size++;
+	}
+	return (size);
 }
