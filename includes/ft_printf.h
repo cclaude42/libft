@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 22:07:57 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/06 18:10:18 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/02/06 18:41:39 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 struct	s_flgs
 {
 	char	buffer[4096];
-	int 	index;
-	int 	minus;
-	int 	zero;
-	int 	dot;
-	int 	precision;
-	int 	width;
+	int		index;
+	int		minus;
+	int		zero;
+	int		dot;
+	int		precision;
+	int		width;
 };
 
 int		ft_putchar_minwid(struct s_flgs *flags, char c, int width);
