@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 14:32:51 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/06 16:10:25 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/02/06 17:00:07 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <stdarg.h>
 
 # include "get_next_line.h"
-# include "ft_printf.h"
 
 typedef struct		s_list
 {

@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -I includes/
 
-HEADER = libutils.h
+HEADER = $(addsuffix .h, $(addprefix includes/, libutils get_next_line ft_printf))
 
 FTIS = alnum alpha ascii count digit in print space spacenl where
 
@@ -12,7 +12,7 @@ FTSKIP = space spacenl char chars
 
 FTLST = add_back add_front clear delone iter last map new size
 
-FTMATH = nbrlen power
+FTMATH = nbrlen hexlen baselen power
 
 FTMEM = bzero calloc memccpy memchr memcmp memcpy memdel memmove memset
 
@@ -24,7 +24,9 @@ FTSUB = ft_str/ft_substr ft_str/ft_split
 
 FTTO = tolower toupper atoi itoa
 
-FTGNL = get_next_line
+FTEX = gnl/get_next_line printf/ft_printf
+
+FTPRF = flagger branch_csp branch_duxo put_c put_s put_du put_o put_x put_p
 
 SRC = $(addsuffix .c, $(addprefix ft_is/ft_is, $(FTIS))) \
 	$(addsuffix .c, $(addprefix ft_lst/ft_lst, $(FTLST))) \
@@ -34,7 +36,8 @@ SRC = $(addsuffix .c, $(addprefix ft_is/ft_is, $(FTIS))) \
 	$(addsuffix .c, $(addprefix ft_skip/ft_skip_, $(FTSKIP))) \
 	$(addsuffix .c, $(addprefix ft_str/ft_str, $(FTSTR)) $(FTSUB)) \
 	$(addsuffix .c, $(addprefix ft_to/ft_, $(FTTO))) \
-	$(addsuffix .c, $(addprefix ft_gnl/, $(FTGNL))) \
+	$(addsuffix .c, $(addprefix ft_, $(FTEX))) \
+	$(addsuffix .c, $(addprefix ft_printf/ft_printf_, $(FTPRF))) \
 
 OBJ = $(SRC:.c=.o)
 
