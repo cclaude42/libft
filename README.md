@@ -80,6 +80,7 @@ This section lists the functions callable from the library. For the prototypes, 
 
 * ``ft_split``
 * ``ft_strchr``
+* ``ft_strcmp``
 * ``ft_strdup``
 * ``ft_strjoin``
 * ``ft_strlcat``
