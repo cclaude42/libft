@@ -1,4 +1,4 @@
-NAME = libutils.a
+NAME = libft.a
 
 CC = gcc
 
