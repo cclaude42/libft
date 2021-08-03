@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 14:32:51 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/27 12:48:50 by cclaude          ###   ########.fr       */
+/*   Updated: 2021/08/02 19:56:47 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdarg.h>
 
 # include "get_next_line.h"
+# include "ft_printf.h"
 
 typedef struct		s_list
 {
@@ -27,12 +28,12 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_chrcount(int c, char *str);
+int					ft_chrindex(int c, char *str);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
-int					ft_iscount(int c, char *base);
 int					ft_isdigit(int c);
-int					ft_isin(int c, char *base);
 int					ft_isprint(int c);
 int					ft_isspace(int c);
 int					ft_isspacenl(int c);

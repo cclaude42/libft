@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscount.c                                       :+:      :+:    :+:   */
+/*   ft_iswhere.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 18:35:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/06 15:38:11 by cclaude          ###   ########.fr       */
+/*   Created: 2020/02/05 18:30:53 by cclaude           #+#    #+#             */
+/*   Updated: 2021/08/02 19:53:52 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_iscount(int c, char *base)
+int	ft_chrindex(int c, char *str)
 {
 	int	i;
-	int	count;
 
 	i = 0;
-	count = 0;
-	while (base[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (base[i] == c)
-			count++;
+		if (str[i] == c)
+			return (i);
 		i++;
 	}
-	return (count);
+	return (-1);
 }

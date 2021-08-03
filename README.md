@@ -26,18 +26,17 @@ This section lists the functions callable from the library. For the prototypes, 
 
 * ``ft_printf``
 
-#### FT_IS
+#### FT_CHR
 
+* ``ft_chrcount``
+* ``ft_chrindex``
 * ``ft_isalnum``
 * ``ft_isalpha``
 * ``ft_isascii``
-* ``ft_iscount``
 * ``ft_isdigit``
-* ``ft_isin``
 * ``ft_isprint``
 * ``ft_isspace``
 * ``ft_isspacenl``
-* ``ft_iswhere``
 
 #### FT_MATH
 

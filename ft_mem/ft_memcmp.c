@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 20:11:24 by cclaude           #+#    #+#             */
-/*   Updated: 2019/10/09 14:34:02 by cclaude          ###   ########.fr       */
+/*   Updated: 2021/08/03 12:37:03 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*p;
 	unsigned char	*q;
 
+	if (s1 == NULL || s2 == NULL)
+		return (0);
 	p = (unsigned char *)s1;
 	q = (unsigned char *)s2;
 	i = 0;

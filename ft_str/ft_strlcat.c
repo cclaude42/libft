@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:19:49 by cclaude           #+#    #+#             */
-/*   Updated: 2019/10/09 18:20:13 by cclaude          ###   ########.fr       */
+/*   Updated: 2021/08/03 12:28:33 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dstlen;
 	size_t	i;
 
+	if (dst == NULL || src == NULL)
+		return (0);
 	srclen = 0;
 	dstlen = 0;
 	while (src[srclen] != '\0')

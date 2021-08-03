@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:47:30 by cclaude           #+#    #+#             */
-/*   Updated: 2019/10/09 14:34:39 by cclaude          ###   ########.fr       */
+/*   Updated: 2021/08/03 12:29:53 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	int	i;
 	int	j;
 
+	if (haystack == NULL || needle == NULL)
+		return (NULL);
 	i = 0;
 	if (needle[0] == '\0')
 		return ((char *)haystack);

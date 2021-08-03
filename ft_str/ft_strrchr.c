@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:31:56 by cclaude           #+#    #+#             */
-/*   Updated: 2019/10/09 16:55:53 by cclaude          ###   ########.fr       */
+/*   Updated: 2021/08/03 12:30:09 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	int		i;
 	int		pos;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	pos = -1;
 	while (s[i] != '\0')

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 19:44:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/10/09 15:52:40 by cclaude          ###   ########.fr       */
+/*   Updated: 2021/08/03 12:20:20 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*q;
 	unsigned char	temp[len];
 
+	if (dst == NULL || src == NULL)
+		return (NULL);
 	i = 0;
 	p = (unsigned char *)dst;
 	q = (unsigned char *)src;
